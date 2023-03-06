@@ -1,0 +1,143 @@
+/* RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: all 1s; /*animates all properties for all states below */
+}
+
+/* targets mouse hover action */
+a:hover {
+    color: #ddd;
+}
+
+/* targets on-click function */
+/* a:active {
+    color: red;
+} */
+
+/* targets first child of element */
+/* a:first-child {
+    color: orange;
+} */
+
+/* targets selected child */
+/* a:nth-child(2) {
+    color: orange;
+} */
+
+/* GLOBAL CLASSES */
+
+.text-content {
+    text-align: center;
+}
+
+
+/* CUSTOM STYLES */
+
+header {
+    background-color: #555;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h3 {
+    color: white;
+}
+
+/* generates pseudo element from within css */
+/* header h3:after {
+    content: ' hello world';
+} */
+
+header nav a {
+    position: relative;
+}
+
+header nav a:nth-child(even) {
+    color: orange;
+}
+
+header nav a:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* creates pseudo element */
+/* header nav a:hover:after {
+    content: '';
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+} */
+
+main {
+    display:flex;
+    flex: 1;
+
+}
+
+main section {
+    flex: 1;
+}
+
+.left {
+    background:coral;
+}
+
+.right {
+    background: lightseagreen;
+    flex: 4;
+    padding: 2%;
+}
+
+footer {
+    background: #aaa;
+    padding: 30px 5%;
+}
+
+
+/* MEDIA QUERIES */
+
+/* best practice: start with browser at smallest width (mobile-first) */
+
+@media (min-width: 800px) {
+    .left {
+        background-color: blueviolet;
+    }
+}
+
+/* for mobile design */
+
+@media (max-width: 800px) {
+    main {
+        flex-direction: column;
+    }
+
+    /* changes position of columns */
+    .right {
+        order: 1;
+    }
+
+    .left {
+        order: 2;
+    }
+}
